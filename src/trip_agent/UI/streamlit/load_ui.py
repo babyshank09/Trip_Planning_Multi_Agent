@@ -489,7 +489,8 @@ class LoadStreamlitUI:
         col1, col2, col3 = st.columns([1, 1, 1])
         with col2:
             if st.button("🚀 START PLANNING"):
-                self.user_controls["start_planning"] = True
+                self.user_controls["start_planning"] = True 
+                st.snow()
             else:
                 self.user_controls["start_planning"] = False
 
