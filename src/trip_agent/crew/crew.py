@@ -59,7 +59,7 @@ class TripCrew:
             # print(f"{self.output_placeholder}")
             # print("\n\n")
             # print(f"{self.output_placeholder.markdown}")
-            return result
+            return result.raw
 
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")

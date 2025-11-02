@@ -85,7 +85,7 @@ class TripTasks():
             Traveling from: {origin}
             Traveler Interests: {interests}
             """),
-            expected_output="A complete travel plan, formatted as markdown, with a daily schedule and budget.",
+            expected_output="A complete travel plan, with a daily schedule and budget.",
             agent=agent)
 
     def __tip_section(self):
