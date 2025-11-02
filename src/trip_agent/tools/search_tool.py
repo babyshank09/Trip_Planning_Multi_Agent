@@ -8,7 +8,8 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv("api.env") 
-serper_api_key = os.getenv("SERPER_API_KEY")
+serper_api_key = os.getenv("SERPER_API_KEY") 
+# serper_api_key = st.session_state.get("serper_api_key", "")
 
 class SearchQuery(BaseModel): 
     query: str = Field(..., description = "The search query to look up") 
@@ -51,7 +52,7 @@ class SearchTools(BaseTool):
                 except KeyError: 
                     continue 
 
-            print(f"Search results:\n\n{'\n\n'.join(string)}")
+            # print(f"Search results:\n\n{'\n\n'.join(string)}")
             return "\n".join(string) if string else "No valid results found" 
         
         except Exception as e:

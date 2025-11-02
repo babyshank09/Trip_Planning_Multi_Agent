@@ -4,3 +4,5 @@ python_dotenv
 pydantic 
 unstructured 
 crewai[google-genai]
+markdown2
+reportlab

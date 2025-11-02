@@ -89,4 +89,5 @@ class TripTasks():
             agent=agent)
 
     def __tip_section(self):
-        return "If you do your BEST WORK, I'll tip you $100 and grant you any wish you want!"
+        return "If you do your BEST WORK, I'll tip you $100 and grant you any wish you want!" 
+    

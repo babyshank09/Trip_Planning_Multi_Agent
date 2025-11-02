@@ -10,14 +10,10 @@ class TripCrew:
         self.cities = cities
         self.origin = origin
         self.interests = interests
-        # Convert date_range to string format for better handling
         self.date_range = f"{date_range[0].strftime('%d-%m-%Y')} to {date_range[1].strftime('%d-%m-%Y')}" 
         self.output_placeholder = st.empty()
-        self.llm = LLM(model="gemini/gemini-2.0-flash", api_key=user_controls["gemini_api_key"])
-        # self.llm = OpenAI(
-        #     temperature=0.7,
-        #     model_name="gpt-4",
-        # )
+        self.llm = LLM(model="gemini/gemini-2.0-flash", api_key=user_controls["gemini_api_key"]) 
+ 
 
     def run(self):
         try:

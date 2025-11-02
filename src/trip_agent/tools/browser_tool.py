@@ -5,8 +5,6 @@ from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
 from unstructured.partition.html import partition_html
 from crewai import Agent, Task
-#from langchain_openai import ChatOpenAI
-# from langchain_groq import ChatGroq
 from crewai import LLM 
 import dotenv 
 from dotenv import load_dotenv 
@@ -14,7 +12,10 @@ import os
 
 load_dotenv('api.env')
 browserless_api_key = os.getenv("BROWSERLESS_API_KEY")
-gemini_api_key = os.getenv("GEMINI_PRO")
+gemini_api_key = os.getenv("GEMINI_API_KEY_1") 
+
+# browserless_api_key = st.session_state.get("browserless_api_key", "")
+# gemini_api_key = st.session_state.get("gemini_api_key", "")
 
 class WebsiteInput(BaseModel):
     website: str = Field(..., description="The website URL to scrape")
@@ -40,8 +41,7 @@ class BrowserTools(BaseTool):
             content = [content[i:i + 8000] for i in range(0, len(content), 8000)]
             summaries = []
             
-            #llm = LLM(model="groq/deepseek-r1-distill-llama-70b")
-            llm = LLM(model="gemini/gemini-2.0-flash", api_key=gemini_api_key)
+            llm = LLM(model="gemini/gemini-2.0-flash", api_key=gemini_api_key) 
              
             for chunk in content:
                 agent = Agent(

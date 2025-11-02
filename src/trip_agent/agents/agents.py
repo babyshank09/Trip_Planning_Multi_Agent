@@ -10,12 +10,10 @@ from src.trip_agent.tools.search_tool import SearchTools
 class TripAgents():
     def __init__(self, llm = None):
         if llm is None:
-            #self.llm = LLM(model="groq/deepseek-r1-distill-llama-70b")
             self.llm = LLM(model="gemini/gemini-2.5-flash")
         else:
             self.llm = llm
 
-        # Initialize tools once
         self.search_tool = SearchTools()
         self.browser_tool = BrowserTools()
         self.calculator_tool = CalculatorTools()
@@ -55,3 +53,6 @@ class TripAgents():
             llm=self.llm,
             verbose=True
         )
+    
+
+     

@@ -1,40 +1,3 @@
-# import streamlit as st 
-# import os  
-# import dotenv 
-# from dotenv import load_dotenv  
-
-
-
-# class LoadStreamlitUI: 
-#     def __init__(self): 
-#         self.user_controls = {}  
-
-#     def load_ui(self): 
-#         st.set_page_config(page_title="Trip Agent", page_icon= "🏖️") 
-#         st.title("🏖️ Trip Agent")  
-#         st.markdown("Welcome to Trip Agent! Your personal assistant for planning the perfect trip. 🌍✈️🏨") 
-
-
-#         with st.sidebar: 
-#             st.header("Settings")  
-#             gemini_api_key = st.text_input("Gemini API Key", type="password")    
-#             serper_api_key = st.text_input("Serper API Key", type="password") 
-#             browserless_api_key = st.text_input("Browserless API Key", type="password")  
-            
-#             st.markdown("---") 
-#             st.markdown("Developed by Shankar🚀")  
-#             st.markdown("Linkedin: https://www.linkedin.com/in/sivashankar-subramaniam-661092228/") 
-
-
-#         self.user_controls["gemini_api_key"] = gemini_api_key 
-#         self.user_controls["serper_api_key"] = serper_api_key
-#         self.user_controls["browserless_api_key"] = browserless_api_key
-
-#         return self.user_controls
-
-
-
-
 import streamlit as st
 
 
@@ -165,6 +128,27 @@ class LoadStreamlitUI:
         }
         .stTextArea textarea::placeholder {
             color: rgba(255,255,255,0.55) !important;
+        }
+                    
+        /* Download button styling */
+        [data-testid="stDownloadButton"] button {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+            color: white !important;
+            border: 2px solid rgba(16, 185, 129, 0.6) !important;
+            border-radius: 12px !important;
+            padding: 1rem 2.5rem !important;
+            font-weight: 700 !important;
+            font-size: 1.1rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.1) !important;
+            transition: all 0.4s ease !important;
+        }
+
+        [data-testid="stDownloadButton"] button:hover {
+            transform: translateY(-4px) scale(1.05) !important;
+            box-shadow: 0 0 60px rgba(16, 185, 129, 0.8), 0 0 100px rgba(5, 150, 105, 0.4) !important;
+            border-color: rgba(5, 150, 105, 0.8) !important;
         }
 
         /* Buttons — START PLANNING style */
